@@ -22,7 +22,7 @@ public class BlockDestroy : MonoBehaviour
         _mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         _blockPosition = _grid.WorldToCell(_mousePosition); 
         
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             _cave.SetTile(_blockPosition, null);
         }
