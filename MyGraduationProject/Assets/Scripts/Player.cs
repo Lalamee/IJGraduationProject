@@ -1,25 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D.Path;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _range;
-    [SerializeField] private GameObject _blocks;
+    [SerializeField] private GameObject _ray;
+
+    private bool _inMove;
 
     private void Update()
     {
-        transform.Translate(_speed * Time.deltaTime,0,0 );
-
-        CheckDistance(_range, _blocks);
+        _inMove = CheckDistance(_range, _ray);
+        
+        Move(_inMove);
     }
 
-    private void CheckDistance(float range, GameObject block)
+    private bool CheckDistance(float range, GameObject Ray)
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, range);
+        RaycastHit2D hit = Physics2D.Raycast(_ray.transform.position, transform.right, range);
+        Debug.DrawRay(_ray.transform.position, transform.right, Color.blue, range);
 
-        if (hit.collider == block)
+        if (hit)
+            return false;
+        else
+            return true;
+    }
+
+    private void Move(bool inMove)
+    {
+        if(inMove)
             transform.Translate(_speed * Time.deltaTime,0,0 );
+        else
+            transform.Translate(0,0,0 );
     }
 }
