@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -23,7 +24,7 @@ public class BlockDestroyAndDrop : MonoBehaviour
     {
         Vector3Int blockPosition = FindBlockPosition();
         bool isDestroy = IsDestroy(blockPosition);
-        
+        CreateDrop(isDestroy);
     }
 
     private Vector3Int FindBlockPosition()
@@ -47,4 +48,12 @@ public class BlockDestroyAndDrop : MonoBehaviour
         }
     }
 
+    private void CreateDrop(bool isDestoy)
+    {
+        if (isDestoy)
+        {
+            Instantiate(_drop, _mousePosition, quaternion.identity);
+            isDestoy = false;
+        }
+    }
 }
