@@ -6,7 +6,11 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class BlockDestroy : MonoBehaviour
-{   
+{
+    [SerializeField] private GameObject _upRay;
+    [SerializeField] private GameObject _downRay;
+    
+    private float _range = 0.5f;
     private Tilemap _cave;
     private GridLayout _grid;
     private Vector2 _mousePosition; 
@@ -20,21 +24,15 @@ public class BlockDestroy : MonoBehaviour
 
     private void Update()
     {
-        Vector3Int blockPosition = FindBlockPosition();
-        Destroy(blockPosition);
+        Destroy();
     }
-
-    private Vector3Int FindBlockPosition()
+    
+    private void Destroy()
     {
         _mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         _blockPosition = _grid.WorldToCell(_mousePosition);
-
-        return _blockPosition;
-    }
-
-    private void Destroy(Vector3Int blockPosition)
-    {
+        
         if (Input.GetMouseButton(0))
-            _cave.SetTile(blockPosition, null);
+                _cave.SetTile(_blockPosition, null);
     }
 }

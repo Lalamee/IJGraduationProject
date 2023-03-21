@@ -7,11 +7,11 @@ using UnityEngine.Serialization;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] private float _range;
     [SerializeField] private GameObject _upRay;
     [SerializeField] private GameObject _downRay;
     
     private bool _inMove;
+    private float _range = 0.5f;
 
     private void Update()
     {
@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
         Move(_inMove);
     }
 
-    private bool CheckDistance(float range, GameObject upRay, GameObject downRay)
+    public bool CheckDistance(float range, GameObject upRay, GameObject downRay)
     {
         RaycastHit2D upHit = Physics2D.Raycast(upRay.transform.position, transform.right, range);
         RaycastHit2D downHit = Physics2D.Raycast(downRay.transform.position, transform.right, range);
