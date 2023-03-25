@@ -7,10 +7,6 @@ using UnityEngine.Tilemaps;
 
 public class BlockDestroy : MonoBehaviour
 {
-    [SerializeField] private GameObject _upRay;
-    [SerializeField] private GameObject _downRay;
-    
-    private float _range = 0.5f;
     private Tilemap _cave;
     private GridLayout _grid;
     private Vector2 _mousePosition; 
