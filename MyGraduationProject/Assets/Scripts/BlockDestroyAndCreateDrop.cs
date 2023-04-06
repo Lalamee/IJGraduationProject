@@ -5,8 +5,10 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class BlockDestroy : MonoBehaviour
+public class BlockDestroyAndCreateDrop : MonoBehaviour
 {
+    [SerializeField] private GameObject _drop;
+    
     private Tilemap _cave;
     private GridLayout _grid;
     private Vector2 _mousePosition; 
@@ -20,15 +22,30 @@ public class BlockDestroy : MonoBehaviour
 
     private void Update()
     {
-        Destroy();
+        CreateDrop(IsDestroy());
     }
     
-    private void Destroy()
+    private bool IsDestroy()
     {
         _mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         _blockPosition = _grid.WorldToCell(_mousePosition);
-        
+
         if (Input.GetMouseButton(0))
+        {
+            if (_cave.GetTile(_blockPosition) != null)
+            {
                 _cave.SetTile(_blockPosition, null);
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private void CreateDrop(bool isDestroy)
+    {
+        if(isDestroy)
+            Instantiate(_drop, _blockPosition, Quaternion.identity);
     }
 }
