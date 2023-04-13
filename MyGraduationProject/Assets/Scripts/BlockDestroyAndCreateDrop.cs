@@ -11,11 +11,13 @@ public class BlockDestroyAndCreateDrop : MonoBehaviour
     
     private Tilemap _cave;
     private GridLayout _grid;
+    private AudioSource _sound;
     private Vector2 _mousePosition; 
     private Vector3Int _blockPosition;
 
     private void Start()
     {
+        _sound = GetComponent<AudioSource>();
         _cave = GetComponent<Tilemap>();
         _grid = GetComponent<GridLayout>();
     }
@@ -35,7 +37,8 @@ public class BlockDestroyAndCreateDrop : MonoBehaviour
             if (_cave.GetTile(_blockPosition) != null)
             {
                 _cave.SetTile(_blockPosition, null);
-
+                _sound.Play();
+                
                 return true;
             }
         }
