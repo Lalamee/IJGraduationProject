@@ -7218,5 +7218,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7034277e48c314a806138708a86c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _magnetRadius: 3
-  _magnetForce: 3
+  _magnetRadius: 2.5
+  _magnetForce: 5
