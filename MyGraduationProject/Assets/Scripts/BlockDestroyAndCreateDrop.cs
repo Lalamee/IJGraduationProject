@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 [RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(Tilemap))]
+[RequireComponent(typeof(GridLayout))]
 public class BlockDestroyAndCreateDrop : MonoBehaviour
 {
     [SerializeField] private GameObject _drop;
@@ -23,7 +25,7 @@ public class BlockDestroyAndCreateDrop : MonoBehaviour
         _grid = GetComponent<GridLayout>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         CreateDrop(IsDestroy());
     }
@@ -38,7 +40,7 @@ public class BlockDestroyAndCreateDrop : MonoBehaviour
             if (_cave.GetTile(_blockPosition) != null)
             {
                 _cave.SetTile(_blockPosition, null);
-                _sound.Play();
+                _sound.PlayOneShot(_sound.clip);
                 
                 return true;
             }

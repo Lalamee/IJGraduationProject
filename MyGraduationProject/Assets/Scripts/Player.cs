@@ -6,6 +6,7 @@ using UnityEditor.U2D.Path;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+[RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _speed;
@@ -41,7 +42,7 @@ public class Player : MonoBehaviour
     
     private bool CheckDistance(float range, GameObject ray)
     {
-        RaycastHit2D hit = Physics2D.Raycast(ray.transform.position, transform.right, range);
+        RaycastHit2D hit = Physics2D.Raycast(ray.transform.position, transform.right, range );
 
         if (hit)
             return false;
