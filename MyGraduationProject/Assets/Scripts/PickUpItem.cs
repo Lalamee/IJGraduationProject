@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class PickUpItem : MonoBehaviour
 {
     [SerializeField] private float _magnetRadius = 3f;
@@ -14,5 +15,20 @@ public class PickUpItem : MonoBehaviour
     private void Start()
     {
         _sound = GetComponent<AudioSource>();
+    }
+
+    private void Update()
+    {
+        Attraction();
+    }
+
+    private void Attraction()
+    {
+        Collider2D[] drops = Physics2D.OverlapCircleAll(transform.position, _magnetRadius);
+
+        foreach (Collider2D drop in drops)
+        {
+                   
+        }
     }
 }

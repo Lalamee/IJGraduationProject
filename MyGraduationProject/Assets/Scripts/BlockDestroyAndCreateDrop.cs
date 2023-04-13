@@ -5,6 +5,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+[RequireComponent(typeof(AudioSource))]
 public class BlockDestroyAndCreateDrop : MonoBehaviour
 {
     [SerializeField] private GameObject _drop;
