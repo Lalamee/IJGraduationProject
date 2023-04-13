@@ -1,10 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.U2D.Path;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour
@@ -13,7 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject _checkRay;
     
     private bool _inMove;
-    private float _range = 0.5f;
+    private float _range = 0.02f;
     private string _currentAnimation;
     private Animator _animator;
 

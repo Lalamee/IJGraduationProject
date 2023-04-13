@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -52,6 +48,6 @@ public class BlockDestroyAndCreateDrop : MonoBehaviour
     private void CreateDrop(bool isDestroy)
     {
         if(isDestroy)
-            Instantiate(_drop, _blockPosition, Quaternion.identity);
+            Instantiate(_drop, _mousePosition, Quaternion.identity);
     }
 }
