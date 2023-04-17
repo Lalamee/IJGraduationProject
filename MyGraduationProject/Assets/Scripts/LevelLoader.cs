@@ -9,4 +9,9 @@ public class LevelLoader : MonoBehaviour
     {
         _1Level.Load();
     }
+
+    public void LoadMenu()
+    {
+        Menu.Load();
+    }
 }
