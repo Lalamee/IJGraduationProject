@@ -5,6 +5,7 @@ public class PickUpItem : MonoBehaviour
 {
     [SerializeField] private float _magnetRadius = 3f;
     [SerializeField] private float _magnetForce = 10f;
+    [SerializeField] private Player _player;
     
     private AudioSource _sound;
 
@@ -37,8 +38,9 @@ public class PickUpItem : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out Drop drop))
         {
-            _sound.PlayOneShot(_sound.clip);
             Destroy(collision.gameObject);
+            _player.IncreaseDrops();
+            _sound.PlayOneShot(_sound.clip);
         }
     }
 }

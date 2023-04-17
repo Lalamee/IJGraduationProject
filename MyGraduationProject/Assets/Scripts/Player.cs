@@ -1,12 +1,16 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private GameObject _checkRay;
-    
+
+    public event UnityAction<int> CountDropsChanged;
+
     private bool _inMove;
+    private int _countDrops;
     private float _range = 0.02f;
     private string _currentAnimation;
     private Animator _animator;
@@ -56,5 +60,11 @@ public class Player : MonoBehaviour
             transform.Translate(0,0,0 );
             ChangeAnimation("Idle");
         }
+    }
+
+    public void IncreaseDrops()
+    {
+        _countDrops++;
+        CountDropsChanged?.Invoke(_countDrops);
     }
 }
