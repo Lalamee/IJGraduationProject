@@ -13,10 +13,10 @@ namespace IJunior.TypedScenes
     using UnityEngine.SceneManagement;
     
     
-    public class _19___Masking_Texture___Soft_Mask : TypedScene
+    public class _2Level : TypedScene
     {
         
-        private const string _sceneName = "_19___Masking_Texture___Soft_Mask";
+        private const string _sceneName = "_2Level";
         
         public static void Load(LoadSceneMode loadSceneMode = LoadSceneMode.Single)
         {

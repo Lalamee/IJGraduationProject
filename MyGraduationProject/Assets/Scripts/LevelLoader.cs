@@ -1,17 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using IJunior.TypedScenes;
 
 public class LevelLoader : MonoBehaviour
 {
-    public void LoadScenes()
+    public void LoadMenu()
+    {
+        Menu.Load();
+    }
+    
+    public void LoadFirstLevel()
     {
         _1Level.Load();
     }
 
-    public void LoadMenu()
+    public void LoadSecondLevel()
     {
-        Menu.Load();
+        _2Level.Load();
     }
 }

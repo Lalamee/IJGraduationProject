@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LevelFinish : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider collision)
+    [SerializeField] private UnityEvent _finish;
+    
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent<Player>(out Player player))
-            Time.timeScale = 0;
+            _finish?.Invoke();
     }
 }
