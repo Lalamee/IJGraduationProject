@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class LevelFinish : MonoBehaviour
+public class LevelCompletion : MonoBehaviour
 {
     [SerializeField] private UnityEvent _finish;
     

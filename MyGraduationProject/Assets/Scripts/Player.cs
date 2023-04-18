@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
 
     public event UnityAction<int> CountDropsChanged;
 
+    private const string Run = "Run";
+    private const string Idle = "Idle";
     private bool _inMove;
     private int _countDrops;
     private float _range = 0.02f;
@@ -18,7 +20,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        _currentAnimation = "Run";
+        _currentAnimation = Run;
     }
 
     private void Update()
@@ -44,8 +46,8 @@ public class Player : MonoBehaviour
 
         if (hit)
             return false;
-        else
-            return true;
+        
+        return true;
     }
 
     private void Move(bool inMove)
@@ -53,12 +55,12 @@ public class Player : MonoBehaviour
         if (inMove)
         {
             transform.Translate(_speed * Time.deltaTime,0,0 );
-            ChangeAnimation("Run");
+            ChangeAnimation(Run);
         }
         else
         {
             transform.Translate(0,0,0 );
-            ChangeAnimation("Idle");
+            ChangeAnimation(Idle);
         }
     }
 

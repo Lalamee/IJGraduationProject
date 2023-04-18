@@ -4,7 +4,7 @@ using UnityEngine.Tilemaps;
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(Tilemap))]
 [RequireComponent(typeof(GridLayout))]
-public class BlockDestroyAndCreateDrop : MonoBehaviour
+public class BlockDestroyerAndCreatorDrop : MonoBehaviour
 {
     [SerializeField] private GameObject _drop;
     
@@ -23,10 +23,10 @@ public class BlockDestroyAndCreateDrop : MonoBehaviour
 
     private void FixedUpdate()
     {
-        CreateDrop(IsDestroy());
+        CreateDrop(IsDestroyBlock());
     }
     
-    private bool IsDestroy()
+    private bool IsDestroyBlock()
     {
         _mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         _blockPosition = _grid.WorldToCell(_mousePosition);

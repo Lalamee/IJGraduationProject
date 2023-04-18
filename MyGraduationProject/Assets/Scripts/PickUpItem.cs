@@ -14,12 +14,12 @@ public class PickUpItem : MonoBehaviour
         _sound = GetComponent<AudioSource>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        Attraction();
+        Attract();
     }
 
-    private void Attraction()
+    private void Attract()
     {
         Collider2D[] drops = Physics2D.OverlapCircleAll(transform.position, _magnetRadius);
 
