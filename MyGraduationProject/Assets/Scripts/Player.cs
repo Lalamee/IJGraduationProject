@@ -4,32 +4,38 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float _speed;
-    [SerializeField] private GameObject _checkRay;
-
-    public event UnityAction<int> CountDropsChanged;
-
     private const string Run = "Run";
     private const string Idle = "Idle";
+    
+    [SerializeField] private float _speed;
+    [SerializeField] private GameObject _checkRay;
+    
+    public event UnityAction<int> CountDropsChanged;
+    
     private bool _inMove;
     private int _countDrops;
     private float _range = 0.02f;
     private string _currentAnimation;
     private Animator _animator;
-
+    
     private void Start()
     {
         _animator = GetComponent<Animator>();
         _currentAnimation = Run;
     }
-
+    
     private void Update()
     {
         _inMove = CheckDistance(_range, _checkRay);
-        
         Move(_inMove);
     }
-
+    
+    public void IncreaseDrops()
+    {
+        _countDrops++;
+        CountDropsChanged?.Invoke(_countDrops);
+    }
+    
     private void ChangeAnimation(string animation)
     {
         if (_currentAnimation == animation) 
@@ -49,7 +55,7 @@ public class Player : MonoBehaviour
         
         return true;
     }
-
+    
     private void Move(bool inMove)
     {
         if (inMove)
@@ -62,11 +68,5 @@ public class Player : MonoBehaviour
             transform.Translate(0,0,0 );
             ChangeAnimation(Idle);
         }
-    }
-
-    public void IncreaseDrops()
-    {
-        _countDrops++;
-        CountDropsChanged?.Invoke(_countDrops);
     }
 }

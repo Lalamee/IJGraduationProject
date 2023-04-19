@@ -2772,6 +2772,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7055349694485509657, guid: 22b53c109fb889148a440068e9c5b1d5, type: 3}
+      propertyPath: _magnetRadius
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7055349694485509665, guid: 22b53c109fb889148a440068e9c5b1d5, type: 3}
       propertyPath: m_Name
       value: Player

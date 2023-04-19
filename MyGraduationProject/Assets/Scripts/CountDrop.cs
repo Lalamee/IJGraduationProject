@@ -5,7 +5,7 @@ public class CountDrop : MonoBehaviour
 {
     [SerializeField] private Player _player;
     [SerializeField] private TMP_Text _count;
-
+    
     private void OnEnable()
     {
         _player.CountDropsChanged += OnCountScoreChange;

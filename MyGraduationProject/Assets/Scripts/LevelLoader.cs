@@ -1,20 +1,41 @@
-using UnityEngine;
 using IJunior.TypedScenes;
+using UnityEngine;
 
 public class LevelLoader : MonoBehaviour
 {
+    private int _levelNumber;
+    
     public void LoadMenu()
     {
-        Menu.Load();
+        _levelNumber = 0;
+        LoadLevel(_levelNumber);
     }
     
     public void LoadFirstLevel()
     {
-        _1Level.Load();
+        _levelNumber = 1;
+        LoadLevel(_levelNumber);
     }
-
+    
     public void LoadSecondLevel()
     {
-        _2Level.Load();
+        _levelNumber = 2;
+        LoadLevel(_levelNumber);
+    }
+    
+    private void LoadLevel(int levelNumber)
+    {
+        switch (levelNumber)
+        {
+            case 0:
+                Menu.Load();
+                break;
+            case 1:
+                FirstLevel.Load();
+                break;
+            case 2:
+                SecondLevel.Load();
+                break;
+        }
     }
 }

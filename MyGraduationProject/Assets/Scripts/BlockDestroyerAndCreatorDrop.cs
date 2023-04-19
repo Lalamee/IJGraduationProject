@@ -21,9 +21,10 @@ public class BlockDestroyerAndCreatorDrop : MonoBehaviour
         _grid = GetComponent<GridLayout>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        CreateDrop(IsDestroyBlock());
+        if(IsDestroyBlock())
+            CreateDrop();
     }
     
     private bool IsDestroyBlock()
@@ -45,9 +46,8 @@ public class BlockDestroyerAndCreatorDrop : MonoBehaviour
         return false;
     }
 
-    private void CreateDrop(bool isDestroy)
+    private void CreateDrop()
     {
-        if(isDestroy)
-            Instantiate(_drop, _mousePosition, Quaternion.identity);
+        Instantiate(_drop, _mousePosition, Quaternion.identity);
     }
 }

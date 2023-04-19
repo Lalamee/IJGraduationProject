@@ -7057,11 +7057,26 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7843796343810418206, guid: dab8ae9d67a908e4491e6ee799f01227, type: 3}
+      propertyPath: _finish.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4982517680316516369}
+    - target: {fileID: 7843796343810418206, guid: dab8ae9d67a908e4491e6ee799f01227, type: 3}
       propertyPath: _finish.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadSecondLevel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dab8ae9d67a908e4491e6ee799f01227, type: 3}
+--- !u!114 &4982517680316516369 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1598870406974898159, guid: dab8ae9d67a908e4491e6ee799f01227, type: 3}
+  m_PrefabInstance: {fileID: 4982517680316516368}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8633aa0ec0573bf44afd14c0ae4b2117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7055349695996314874
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7069,6 +7084,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7055349694485509657, guid: 22b53c109fb889148a440068e9c5b1d5, type: 3}
+      propertyPath: _magnetRadius
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7055349694485509665, guid: 22b53c109fb889148a440068e9c5b1d5, type: 3}
       propertyPath: m_Name
       value: Player
