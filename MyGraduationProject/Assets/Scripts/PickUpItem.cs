@@ -40,9 +40,8 @@ public class PickUpItem : MonoBehaviour
             {
                 if (drop.gameObject.TryGetComponent(out Drop item)) 
                 {
-                    Rigidbody2D rb = drop.gameObject.GetComponent<Rigidbody2D>();
                     Vector2 direction = transform.position - drop.gameObject.transform.position;
-                    rb.AddForce(direction.normalized * _magnetForce);
+                    item.Rigidbody.AddForce(direction.normalized * _magnetForce);
                 }
             }
             

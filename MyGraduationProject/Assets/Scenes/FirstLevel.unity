@@ -7057,12 +7057,20 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7843796343810418206, guid: dab8ae9d67a908e4491e6ee799f01227, type: 3}
+      propertyPath: _finish.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843796343810418206, guid: dab8ae9d67a908e4491e6ee799f01227, type: 3}
       propertyPath: _finish.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4982517680316516369}
     - target: {fileID: 7843796343810418206, guid: dab8ae9d67a908e4491e6ee799f01227, type: 3}
       propertyPath: _finish.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadSecondLevel
+      value: LoadLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843796343810418206, guid: dab8ae9d67a908e4491e6ee799f01227, type: 3}
+      propertyPath: _finish.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dab8ae9d67a908e4491e6ee799f01227, type: 3}
