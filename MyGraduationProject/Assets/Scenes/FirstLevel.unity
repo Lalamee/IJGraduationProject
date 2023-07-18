@@ -6903,6 +6903,10 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 2113762016}
+    - target: {fileID: 1585302992588550782, guid: 2570557e2d7e7094db0367bdeba595a6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.7000122
+      objectReference: {fileID: 0}
     - target: {fileID: 1585302993384095920, guid: 2570557e2d7e7094db0367bdeba595a6, type: 3}
       propertyPath: m_Name
       value: UI
@@ -7143,6 +7147,10 @@ PrefabInstance:
     - target: {fileID: 7055349694485509669, guid: 22b53c109fb889148a440068e9c5b1d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055349694485509670, guid: 22b53c109fb889148a440068e9c5b1d5, type: 3}
+      propertyPath: m_Mass
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22b53c109fb889148a440068e9c5b1d5, type: 3}

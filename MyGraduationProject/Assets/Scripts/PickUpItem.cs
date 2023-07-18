@@ -22,7 +22,7 @@ public class PickUpItem : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out Drop drop))
         {
-            Destroy(collision.gameObject);
+            Destroy(drop);
             _player.IncreaseDrops();
             _sound.PlayOneShot(_sound.clip);
         }
