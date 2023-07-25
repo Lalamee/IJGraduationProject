@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,9 +11,7 @@ public class Player : MonoBehaviour
     
     [SerializeField] private float _speed;
     [SerializeField] private GameObject _checkRay;
-    
-    public event UnityAction<int> CountDropsChanged;
-    
+
     private bool _inMove;
     private int _countDrops;
     private int _countOil;
@@ -24,6 +23,12 @@ public class Player : MonoBehaviour
     private float _range = 0.02f;
     private string _currentAnimation;
     private Animator _animator;
+    
+    public event UnityAction<int> CountOilChanged;
+    public event UnityAction<int> CountDiamondChanged;
+    public event UnityAction<int> CountCobleChanged;
+    public event UnityAction<int> CountGoldChanged;
+    public event UnityAction<int> CountIronChanged;
 
     private void Start()
     {
@@ -37,40 +42,34 @@ public class Player : MonoBehaviour
         Move(_inMove);
     }
     
-    public void IncreaseDrops()
-    {
-        _countDrops++;
-        CountDropsChanged?.Invoke(_countDrops);
-    }
-
     public void IncreaseCoble()
     {
         _countCoble++;
-        CountDropsChanged?.Invoke(_countCoble);
+        CountCobleChanged?.Invoke(_countCoble);
     }
     
     public void IncreaseDiamond()
     {
         _countDiamond++;
-        CountDropsChanged?.Invoke(_countDiamond);
+        CountDiamondChanged?.Invoke(_countDiamond);
     }
     
     public void IncreaseGold()
     {
         _countGold++;
-        CountDropsChanged?.Invoke(_countGold);
+        CountGoldChanged?.Invoke(_countGold);
     }
     
     public void IncreaseIron()
     {
         _countIron++;
-        CountDropsChanged?.Invoke(_countIron);
+        CountIronChanged?.Invoke(_countIron);
     }
     
     public void IncreaseOil()
     {
         _countOil++;
-        CountDropsChanged?.Invoke(_countOil);
+        CountOilChanged?.Invoke(_countOil);
     }
     
     public int GetCountCoble()

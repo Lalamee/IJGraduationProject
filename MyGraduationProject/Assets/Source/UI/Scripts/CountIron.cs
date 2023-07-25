@@ -1,19 +1,19 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
-public class CountDrop : MonoBehaviour
+public class CountIron : MonoBehaviour
 {
     [SerializeField] private Player _player;
     [SerializeField] private TMP_Text _count;
     
     private void OnEnable()
     {
-        _player.CountDropsChanged += OnCountScoreChange;
+        _player.CountIronChanged += OnCountScoreChange;
     }
 
     private void OnDisable()
     {
-        _player.CountDropsChanged -= OnCountScoreChange;
+        _player.CountIronChanged -= OnCountScoreChange;
     }
 
     private void OnCountScoreChange(int count)
