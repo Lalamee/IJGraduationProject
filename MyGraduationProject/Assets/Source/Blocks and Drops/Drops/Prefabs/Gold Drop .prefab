@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5314483279421426398}
   - component: {fileID: 1057861750474835992}
   - component: {fileID: 6956912825799541343}
+  - component: {fileID: 3701433134564994542}
   m_Layer: 0
   m_Name: 'Gold Drop '
   m_TagString: Untagged
@@ -144,5 +145,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74d41e9e6c760474188928fed76857bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3701433134564994542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837013675951273902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c734a60fef27948abcd584234b614e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

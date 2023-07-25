@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,10 +15,16 @@ public class Player : MonoBehaviour
     
     private bool _inMove;
     private int _countDrops;
+    private int _countOil;
+    private int _countDiamond;
+    private int _countCoble;
+    private int _countGold;
+    private int _countIron;
+
     private float _range = 0.02f;
     private string _currentAnimation;
     private Animator _animator;
-    
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
@@ -34,6 +41,41 @@ public class Player : MonoBehaviour
     {
         _countDrops++;
         CountDropsChanged?.Invoke(_countDrops);
+    }
+
+    public void IncreaseCoble()
+    {
+        _countCoble++;
+        CountDropsChanged?.Invoke(_countCoble);
+    }
+    
+    public void IncreaseDiamond()
+    {
+        _countDiamond++;
+        CountDropsChanged?.Invoke(_countDiamond);
+    }
+    
+    public void IncreaseGold()
+    {
+        _countGold++;
+        CountDropsChanged?.Invoke(_countGold);
+    }
+    
+    public void IncreaseIron()
+    {
+        _countIron++;
+        CountDropsChanged?.Invoke(_countIron);
+    }
+    
+    public void IncreaseOil()
+    {
+        _countOil++;
+        CountDropsChanged?.Invoke(_countOil);
+    }
+    
+    public int GetCountCoble()
+    {
+        return _countDrops;
     }
     
     private void ChangeAnimation(string animation)

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5021881441480336490}
   - component: {fileID: 6456523707620016465}
   - component: {fileID: 5989323089380530976}
+  - component: {fileID: 3070538722089579857}
   m_Layer: 0
   m_Name: Coble Drop
   m_TagString: Untagged
@@ -144,5 +145,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74d41e9e6c760474188928fed76857bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3070538722089579857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2468068139634336005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb72aa71d77fda48b9e28cacaa58fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

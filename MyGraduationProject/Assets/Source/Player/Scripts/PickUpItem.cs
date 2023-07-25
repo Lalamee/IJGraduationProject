@@ -1,5 +1,8 @@
- using System.Collections;
-using UnityEngine;
+using System; 
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+ using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
 public class PickUpItem : MonoBehaviour
@@ -22,8 +25,20 @@ public class PickUpItem : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out Drop drop))
         {
+            if (collision.gameObject.TryGetComponent(out Oil oil))
+                _player.IncreaseOil();
+            else if (collision.gameObject.TryGetComponent(out Diamond diamond))
+                _player.IncreaseDiamond();
+            else if (collision.gameObject.TryGetComponent(out Coble coble))
+                _player.IncreaseCoble();
+            else if (collision.gameObject.TryGetComponent(out Gold gold))
+                _player.IncreaseGold();
+            else if (collision.gameObject.TryGetComponent(out Iron iron))
+                _player.IncreaseIron();
+            else
+                Debug.LogWarning("Unknown drop type");
+            
             Destroy(drop.gameObject);
-            _player.IncreaseDrops();
             _sound.PlayOneShot(_sound.clip);
         }
     }

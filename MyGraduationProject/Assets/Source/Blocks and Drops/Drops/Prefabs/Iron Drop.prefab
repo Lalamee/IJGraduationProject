@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1814848325438243879}
   - component: {fileID: 7241635972911618776}
   - component: {fileID: 4187232084595004524}
+  - component: {fileID: 7883403442835991546}
   m_Layer: 0
   m_Name: Iron Drop
   m_TagString: Untagged
@@ -144,5 +145,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74d41e9e6c760474188928fed76857bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7883403442835991546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6084208454480133119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a3918fc57d003c40a8106a6bd437ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
