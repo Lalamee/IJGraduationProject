@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 126618861}
   - component: {fileID: 126618864}
   - component: {fileID: 126618865}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stone Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2618,6 +2618,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 468183984, guid: 2570557e2d7e7094db0367bdeba595a6, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 1778774391}
+    - target: {fileID: 1532123759, guid: 2570557e2d7e7094db0367bdeba595a6, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 1778774391}
+    - target: {fileID: 1546789712, guid: 2570557e2d7e7094db0367bdeba595a6, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 1778774391}
+    - target: {fileID: 1746426211, guid: 2570557e2d7e7094db0367bdeba595a6, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 1778774391}
     - target: {fileID: 1585302992588550781, guid: 2570557e2d7e7094db0367bdeba595a6, type: 3}
       propertyPath: _player
       value: 
@@ -2726,7 +2742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 557403056}
   - component: {fileID: 557403055}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2840,7 +2856,7 @@ GameObject:
   - component: {fileID: 646980694}
   - component: {fileID: 646980697}
   - component: {fileID: 646980698}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Iron Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3190,7 +3206,7 @@ GameObject:
   - component: {fileID: 1167597622}
   - component: {fileID: 1167597621}
   - component: {fileID: 1167597620}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3992,7 +4008,7 @@ GameObject:
   - component: {fileID: 1295323798}
   - component: {fileID: 1295323800}
   - component: {fileID: 1295323799}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7318,7 +7334,7 @@ GameObject:
   - component: {fileID: 1812156160}
   - component: {fileID: 1812156163}
   - component: {fileID: 1812156164}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oil Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}

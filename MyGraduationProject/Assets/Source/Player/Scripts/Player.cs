@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     
     [SerializeField] private float _speed;
     [SerializeField] private GameObject _checkRay;
-
+    
     private bool _inMove;
     private int _countDrops;
     private int _countOil;
@@ -89,7 +89,9 @@ public class Player : MonoBehaviour
     
     private bool CheckDistance(float range, GameObject ray)
     {
-        RaycastHit2D hit = Physics2D.Raycast(ray.transform.position, transform.right, range );
+        int layerMask = LayerMask.GetMask("Cave");
+        
+        RaycastHit2D hit = Physics2D.Raycast(ray.transform.position, transform.right, range, layerMask);
 
         if (hit)
             return false;
