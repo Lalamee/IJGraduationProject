@@ -8,6 +8,11 @@ public class Player : MonoBehaviour
 {
     private const string Run = "Run";
     private const string Idle = "Idle";
+    private const string Coble = "Coble";
+    private const string Iron = "Iron";
+    private const string Diamond = "Diamond";
+    private const string Oil = "Oil";
+    private const string Gold = "Gold";
     
     [SerializeField] private float _speed;
     [SerializeField] private GameObject _checkRay;
@@ -29,6 +34,24 @@ public class Player : MonoBehaviour
     public event UnityAction<int> CountCobleChanged;
     public event UnityAction<int> CountGoldChanged;
     public event UnityAction<int> CountIronChanged;
+
+    private void Awake()
+    {
+        _countCoble = PlayerPrefs.GetInt(Coble);
+        CountCobleChanged?.Invoke(_countCoble);
+        
+        _countOil = PlayerPrefs.GetInt(Oil);
+        CountOilChanged?.Invoke(_countOil);
+        
+        _countIron = PlayerPrefs.GetInt(Iron);
+        CountIronChanged?.Invoke(_countIron);
+        
+        _countGold = PlayerPrefs.GetInt(Gold);
+        CountGoldChanged?.Invoke(_countGold);
+        
+        _countDiamond = PlayerPrefs.GetInt(Diamond);
+        CountDiamondChanged?.Invoke(_countDiamond);
+    }
 
     private void Start()
     {
@@ -72,9 +95,14 @@ public class Player : MonoBehaviour
         CountOilChanged?.Invoke(_countOil);
     }
     
-    public int GetCountCoble()
+    public void SaveDrpos()
     {
-        return _countDrops;
+        PlayerPrefs.SetInt(Coble, _countCoble);
+        PlayerPrefs.SetInt(Oil, _countOil);
+        PlayerPrefs.SetInt(Iron, _countIron);
+        PlayerPrefs.SetInt(Gold, _countGold);
+        PlayerPrefs.SetInt(Diamond, _countDiamond);
+        PlayerPrefs.Save();
     }
     
     private void ChangeAnimation(string animation)

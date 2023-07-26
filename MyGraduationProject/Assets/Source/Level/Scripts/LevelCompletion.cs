@@ -9,8 +9,7 @@ public class LevelCompletion : MonoBehaviour
     {
         if (collision.TryGetComponent<Player>(out Player player))
         {
-            PlayerPrefs.SetInt("Coble", player.GetCountCoble());
-            PlayerPrefs.Save();
+            player.SaveDrpos();
             _finish?.Invoke();
         }
     }
