@@ -4,9 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour, ISceneLoadHandler<int>
 {
-    public void LoadLevel(int levelNumber)
+    public void LoadLevel()
     {
-        SceneManager.LoadScene(levelNumber);
+        int randomLevelNumber = Random.Range(3, 22);
+        SceneManager.LoadScene(randomLevelNumber);
     }
 
     public void LoadMenu()
